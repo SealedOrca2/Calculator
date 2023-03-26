@@ -4,17 +4,22 @@ import 'package:math_expressions/math_expressions.dart';
 
 
 void main() {
-  runApp(MaterialApp(
+  runApp( MaterialApp(
     home: CalculatorApp(),
   ));
 }
 
 
-class CalculatorApp extends StatelessWidget {
+class CalculatorApp extends StatefulWidget {
+  const CalculatorApp({super.key});
 
-   CalculatorApp({super.key});
+  @override
+  State<CalculatorApp> createState() => _CalculatorAppState();
+}
 
-  double firstNum = 0.0 ;
+class _CalculatorAppState extends State<CalculatorApp> {
+
+double firstNum = 0.0 ;
   double secondNum = 0.0;
   var Input = '';
   var Output = '';
@@ -41,8 +46,11 @@ class CalculatorApp extends StatelessWidget {
           Input =  Input + value ;
          }
       }
-      
-      }
+      setState(() {
+        
+      });
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -168,3 +176,4 @@ class CalculatorApp extends StatelessWidget {
                 );
   }
 }
+
